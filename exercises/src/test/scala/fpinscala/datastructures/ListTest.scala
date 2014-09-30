@@ -11,5 +11,8 @@ class ListTest extends Specification {
     "tail is Nil if list is Nil" in {
       List.tail(Nil) must beEqualTo(Nil)
     }
+    "replace the head" in {
+      List.setHead(List(1, 2, 3), 4) should beEqualTo(List(4, 2, 3))
+    }
   }
 }
