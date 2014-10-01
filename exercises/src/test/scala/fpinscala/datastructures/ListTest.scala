@@ -18,10 +18,10 @@ class ListTest extends Specification {
       List.drop(List(1, 2, 3), 2) should beEqualTo(List(3))
     }
     "drop elements in a list that match a predicate" in {
-      def lessThanThree(i: Int): Boolean = {
-        i < 3
-      }
       List.dropWhile(List(1, 2, 3, 4), (i: Int) => i < 3) should beEqualTo(List(3, 4))
+    }
+    "get all but the last element of a list" in {
+      List.init(List(1, 2, 3, 4)) should beEqualTo(List(1, 2, 3))
     }
   }
 }
