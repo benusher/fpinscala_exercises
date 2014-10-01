@@ -14,8 +14,14 @@ class ListTest extends Specification {
     "replace the head" in {
       List.setHead(List(1, 2, 3), 4) should beEqualTo(List(4, 2, 3))
     }
-    "remove the first n items in a list" in {
+    "drop the first n items in a list" in {
       List.drop(List(1, 2, 3), 2) should beEqualTo(List(3))
+    }
+    "drop elements in a list that match a predicate" in {
+      def lessThanThree(i: Int): Boolean = {
+        i < 3
+      }
+      List.dropWhile(List(1, 2, 3, 4), (i: Int) => i < 3) should beEqualTo(List(3, 4))
     }
   }
 }
