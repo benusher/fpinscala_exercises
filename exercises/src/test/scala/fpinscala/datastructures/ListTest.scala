@@ -23,5 +23,8 @@ class ListTest extends Specification {
     "get all but the last element of a list" in {
       List.init(List(1, 2, 3, 4)) should beEqualTo(List(1, 2, 3))
     }
+    "get the length of a list" in {
+      List.length(List(1, 2, 3, 4)) should beEqualTo(4)
+    }
   }
 }
