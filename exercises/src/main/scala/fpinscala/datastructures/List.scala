@@ -48,6 +48,14 @@ object List {
       case Cons(x, xs) => f(x, foldRight(xs, z)(f))
     }
 
+  @annotation.tailrec
+  def foldLeft[A, B](l: List[A], z: B)(f: (B, A) => B): B = {
+    l match {
+      case Nil => z
+      case Cons(x, xs) => foldLeft(xs, f(z, x))(f)
+    }
+  }
+
   def sum2(ns: List[Int]) =
     foldRight(ns, 0)((x, y) => x + y)
 
@@ -87,8 +95,6 @@ object List {
   def length[A](l: List[A]): Int = {
     foldRight(l, 0)((_, count) => count + 1)
   }
-
-  def foldLeft[A, B](l: List[A], z: B)(f: (B, A) => B): B = sys.error("todo")
 
   def map[A, B](l: List[A])(f: A => B): List[B] = sys.error("todo")
 }
