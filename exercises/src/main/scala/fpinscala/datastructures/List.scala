@@ -48,9 +48,6 @@ object List {
       case Cons(x, xs) => f(x, foldRight(xs, z)(f))
     }
 
-  def foldRight2[A, B](as: List[A], z: B)(f: (A, B) => B): B =
-  foldLeft(as, z)(f)
-
   @annotation.tailrec
   def foldLeft[A, B](l: List[A], z: B)(f: (B, A) => B): B = {
     l match {
