@@ -37,5 +37,8 @@ class ListTest extends Specification {
     "3.12 Reverse a list with a fold" in {
       List.reverse(List(1, 2, 3, 4)) must beEqualTo(List(4, 3, 2, 1))
     }
+    "3.13 Implement foldLeft in terms of foldRight" in {
+      List.foldRight2(List(1, 2, 3, 4), 0)((x, y) => x + y) must beEqualTo(10)
+    }
   }
 }
