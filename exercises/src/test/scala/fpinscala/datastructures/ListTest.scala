@@ -29,5 +29,10 @@ class ListTest extends Specification {
     "foldLeft a List" in {
       List.foldLeft(List(1, 2, 3, 4), "")((acc, nextInt) => acc + nextInt.toString) must beEqualTo("1234")
     }
+    "3.11 Implement product, sum and length in foldLeft" in {
+      List.sum3(List(1, 2, 3, 4)) must beEqualTo(10)
+      List.product3(List(1, 2, 3, 4)) must beEqualTo(24)
+      List.length2(List(1, 2, 3, 4)) must beEqualTo(4)
+    }
   }
 }
