@@ -43,7 +43,7 @@ object List {
     }
 
   def appendByFolding[A](a1: List[A], a2: List[A]): List[A] =
-    foldLeft(reverse(a1), a2)((acc, n) => Cons(n, acc))
+    foldRight(a1, a2)((n, acc) => Cons(n, acc))
 
   def foldRight[A, B](as: List[A], z: B)(f: (A, B) => B): B = // Utility functions
     as match {
