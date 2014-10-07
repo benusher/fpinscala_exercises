@@ -40,5 +40,8 @@ class ListTest extends Specification {
     "3.14 Append by folding" in {
       List.appendByFolding(List(1, 2), List(3, 4)) must beEqualTo(List(1, 2, 3, 4))
     }
+    "3.15 Concatenate a list of lists into a single list" in {
+      List.concatenate(List(List(1, 2), List(3, 4))) must beEqualTo(List(1, 2, 3, 4))
+    }
   }
 }
