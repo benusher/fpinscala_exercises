@@ -34,5 +34,8 @@ class ListTest extends Specification {
       List.product3(List(1, 2, 3, 4)) must beEqualTo(24)
       List.length2(List(1, 2, 3, 4)) must beEqualTo(4)
     }
+    "3.12 Reverse a list with a fold" in {
+      List.reverse(List(1, 2, 3, 4)) must beEqualTo(List(4, 3, 2, 1))
+    }
   }
 }
