@@ -43,5 +43,8 @@ class ListTest extends Specification {
     "3.15 Concatenate a list of lists into a single list" in {
       List.concatenate(List(List(1, 2), List(3, 4))) must beEqualTo(List(1, 2, 3, 4))
     }
+    "3.16 Add one to each element in a list" in {
+      List.addOne(List(1, 2, 3, 4)) must beEqualTo(List(2, 3, 4, 5))
+    }
   }
 }

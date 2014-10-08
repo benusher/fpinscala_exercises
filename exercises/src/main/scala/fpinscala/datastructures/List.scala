@@ -110,12 +110,15 @@ object List {
   }
 
   def reverse[A](l: List[A]): List[A] = {
-    foldLeft(l, Nil:List[A])((acc, n) => Cons(n, acc))
+    foldLeft(l, Nil: List[A])((acc, n) => Cons(n, acc))
   }
 
   def concatenate[A](ls: List[List[A]]): List[A] = {
-    foldRight(ls, Nil:List[A])(append)
+    foldRight(ls, Nil: List[A])(append)
   }
+
+  def addOne(l: List[Int]): List[Int] =
+    foldRight(l, Nil: List[Int])((n, acc) => Cons(n + 1, acc))
 
   def map[A, B](l: List[A])(f: A => B): List[B] = sys.error("todo")
 }
