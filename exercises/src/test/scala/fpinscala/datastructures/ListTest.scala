@@ -49,5 +49,8 @@ class ListTest extends Specification {
     "3.17 Convert Double to String" in {
       List.doubleToString(List(1.0, 2.0, 3.0, 4.0)) must beEqualTo(List("1.0", "2.0", "3.0", "4.0"))
     }
+    "3.18 Implement map" in {
+      List.map(List(1.0, 2.0, 3.0, 4.0))((x) => x.toString) must beEqualTo(List("1.0", "2.0", "3.0", "4.0"))
+    }
   }
 }
