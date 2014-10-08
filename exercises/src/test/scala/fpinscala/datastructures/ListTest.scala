@@ -46,5 +46,8 @@ class ListTest extends Specification {
     "3.16 Add one to each element in a list" in {
       List.addOne(List(1, 2, 3, 4)) must beEqualTo(List(2, 3, 4, 5))
     }
+    "3.17 Convert Double to String" in {
+      List.doubleToString(List(1.0, 2.0, 3.0, 4.0)) must beEqualTo(List("1.0", "2.0", "3.0", "4.0"))
+    }
   }
 }

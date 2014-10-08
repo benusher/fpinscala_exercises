@@ -120,5 +120,8 @@ object List {
   def addOne(l: List[Int]): List[Int] =
     foldRight(l, Nil: List[Int])((n, acc) => Cons(n + 1, acc))
 
+  def doubleToString(l: List[Double]): List[String] =
+    foldRight(l, Nil: List[String])((n, acc) => Cons(n.toString, acc))
+
   def map[A, B](l: List[A])(f: A => B): List[B] = sys.error("todo")
 }
