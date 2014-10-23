@@ -55,5 +55,8 @@ class ListTest extends Specification {
     "3.19 Filter out elements from a list that do not satisfy a predicate" in {
       List.filter(List(1, 2, 3, 4))((n) => (n % 2) == 0) must beEqualTo(List(2, 4))
     }
+    "3.20 Flatmap" in {
+      List.flatMap(List(1, 2, 3))(i => List(i, i)) must beEqualTo(List(1, 1, 2, 2, 3, 3))
+    }
   }
 }
