@@ -52,5 +52,8 @@ class ListTest extends Specification {
     "3.18 Implement map" in {
       List.map(List(1.0, 2.0, 3.0, 4.0))((x) => x.toString) must beEqualTo(List("1.0", "2.0", "3.0", "4.0"))
     }
+    "3.19 Filter out elements from a list that do not satisfy a predicate" in {
+      List.filter(List(1, 2, 3, 4))((n) => (n % 2) == 0) must beEqualTo(List(2, 4))
+    }
   }
 }
