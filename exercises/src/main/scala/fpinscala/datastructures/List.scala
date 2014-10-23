@@ -135,4 +135,8 @@ object List {
   def flatMap[A, B](as: List[A])(f: A => List[B]): List[B] = {
     foldRight(as, Nil: List[B])((n, acc) => append(f(n), acc))
   }
+
+  def addTwoLists(l1: List[Integer], l2: List[Integer]): List[Integer] = {
+    Nil
+  }
 }
