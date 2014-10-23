@@ -129,6 +129,9 @@ object List {
   def filter[A](l: List[A])(f: A => Boolean): List[A] =
     foldRight(l, Nil: List[A])((n, acc) => if (f(n)) Cons(n, acc) else acc)
 
+  def filterByFlatMap[A](l: List[A])(f: A => Boolean): List[A] =
+   flatMap(l)((n) => if (f(n)) List(n) else Nil)
+
   def flatMap[A, B](as: List[A])(f: A => List[B]): List[B] = {
     foldRight(as, Nil: List[B])((n, acc) => append(f(n), acc))
   }
